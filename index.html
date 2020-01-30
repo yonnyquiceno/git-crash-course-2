@@ -1,0 +1,351 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Git CrashCourse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="javascript/script.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="l-site">
+    <div class="l-nav">
+      <nav class="nav">
+        <ul>
+          <li class="nav-primary" to="home"><a href="#">Git Crash Course</a></li>
+          <li class="nav-primary" to="what-is-it"><a href="#">¿Qué es git?</a></li>
+          <li class="nav-primary" to="config"><a href="#">Configuración básica</a></li>
+          <li class="nav-primary" to="branches"><a href="#">Manejo de Ramas</a></li>
+          <li class="nav-primary" to="commands"><a href="#">Los Básicos</a></li>
+          <li class="nav-primary" to="git-commit"><a href="#">Qué es un commit?</a></li>
+          <li class="nav-primary" to="pull-request"><a href="#">Qué es un pull request (push request)?</a></li>
+          <li class="nav-primary" to="more-commands"><a href="#">Otros más</a></li>
+          <li class="nav-primary" to="questions"><a href="#">Q/A</a></li>
+          <li class="nav-primary" to="spare-time"><a href="#">Si queda tiempo...</a></li>
+          <li class="nav-primary" to="handy-references"><a href="#">Referencias</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="l-page">
+      <div class="menu">
+        <div class="menu-hamburger"></div>
+      </div>
+      <section class="band band-a" id="home">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>Git Crash Course by el Alex</h1>
+            <div class="quote">crash course: short course in which you are taught basic facts or skills</div>
+            <p>
+              (tengan a mano sus credenciales de github.)
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="band band-c" id="what-is-it">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>¿Qué es git</h1>
+            <div class="quote">"Un google drive para código"</div>
+
+            <div class="row">
+              <div class="col-8">
+                Git es una herramienta que realiza una función del control de versiones de código de forma distribuida ,
+                de la que destacamos varias características:
+
+                <ul>
+                  <li>
+                    Es muy potente
+                  </li>
+                  <li>
+                    Fue diseñada por Linus Torvalds
+                  </li>
+                  <li>
+                    Es software libre
+                  </li>
+                  <li>
+                    Con ella podemos mantener un historial completo de versiones
+                  </li>
+                  <li>
+                    Es muy rápida
+                  </li>
+                </ul>
+              </div>
+              <div class="col-4">
+                <img src="images/git-tree.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="band band-a" id="config">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>Basic configuration</h1>
+
+            <h4>
+              set global username and email configuration
+            </h4>
+
+            Open command line (eg git bash)
+            <h4>
+              Set your username:
+            </h4>
+
+            <pre
+              class=" language-es"><code class=" language-es">git config --global user.name "FIRST_NAME LAST_NAME"</code></pre>
+
+            <h4>
+              Set your email address:
+            </h4>
+
+            <pre
+              class=" language-es"><code class=" language-es">git config --global user.email "OUR_NAME@example.com"</code></pre>
+
+            <div class="h4">
+              Verify your configuration by showing username and email
+            </div>
+
+            <pre
+              class=" language-es"><code class=" language-es"># show username <br> git config user.name  <br> # show email <br> git config user.email</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="band band-d" id="branches">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>Manejo de ramas</h1>
+            <img src="images/git-tree.png" alt="">
+            <br><br>
+            <p>
+              Git Tiene un sistema de trabajo con ramas que lo hace especialmente potente
+              las ramas están destinadas a provocar <strong>versiones divergentes de una version principal</strong>,
+              para hacer experimentos o para probar nuevas funcionalidades.
+
+              Las ramas pueden tener una línea de progreso diferente de la rama principal donde está el core de nuestro
+              desarrollo.
+
+              En algún momento podemos llegar a probar algunas de esas mejoras o cambios en el código y hacer una fusión
+              a nuestro proyecto principal
+            </p>
+            <br><br>
+            <h4>(hacer dibujito de ejemplo puntual)</h4>
+          </div>
+        </div>
+      </section>
+      <section class="band band-e" id="commands">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>Ordenes Básicas</h1>
+            <p>
+              Git tiene muchísimos comandos, pero no hay que aprenderselos todos, a medida que se usan, se memorizan
+            </p>
+            <br><br>
+            <p>Iniciar un repositorio vacío en unas carpeta específica.</p>
+            <pre class=" language-es"><code class=" language-es">git init</code>
+            </pre>
+            <p>Clonar un repositorio en el directorio actual</p>
+            <pre class=" language-es"><code class=" language-es">git clone "url del repositorio"</code>
+            </pre>
+            <p>Traer cambios desde el repositorio (actualizar tu rama)</p>
+            <pre class=" language-es"><code class=" language-es">git pull origin "url del repositorio"</code>
+            </pre>
+            <p>Mostrar el estado actual de la rama(branch), como los cambios que hay sin hacer commit.</p>
+            <pre class=" language-es"><code class=" language-es">git status</code></pre>
+            <p>Listar las ramas existentes</p>
+            <pre class=" language-es"><code class=" language-es">git branch</code></pre>
+            <p>Crear una nueva rama</p>
+            <pre class=" language-es"><code class=" language-es">git branch "Nombre de la rama"</code></pre>
+            <p>"pasarse" a la nueva rama</p>
+            <pre class=" language-es"><code class=" language-es">git checkout "Nombre de la rama"</code></pre>
+            <p>Añadir un archivo especifico.</p>
+            <pre class=" language-es"><code class=" language-es">git add “nombre_de_archivo”</code></pre>
+            <p>Añadir todos los archivos del directorio</p>
+            <pre class=" language-es"><code class=" language-es">git add .</code></pre>
+            <p>Quitar de la lista un archivo</p>
+            <pre class=" language-es"><code class=" language-es">git checkout "ruta al archivo"</code></pre>
+            <p>
+              Confirmar los cambios realizados. El “mensaje” generalmente se usa para asociar al commit una breve
+              descripción de los cambios realizados.
+            </p>
+            <pre class=" language-es"><code class=" language-es">git commit –m “mensaje”</code></pre>
+            <p>Subir la rama(branch) “nombre_rama” al servidor remoto.</p>
+            <pre class=" language-es"><code class=" language-es">git push origin “nombre rama”</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="band band-g" id="git-commit">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>Git Commit</h1>
+            <div class="quote">a commit message shows whether a developer is a good collaborator.</div>
+
+            <p>
+              The "commit" command is used to save your changes to the local repository.
+              <br>
+              Note that you have to explicitly tell Git which changes you want to include in a commit before running the
+              "git commit" command. This means that a file won't be automatically included in the next commit just
+              because it was changed. Instead, you need to use the "git add" command to mark the desired changes for
+              inclusion.
+              <br>
+              Also note that in Git (not like in Subversion), a commit is not automatically transferred to the remote
+              server. Using the "git commit" command only saves a new commit object in the local Git repository.
+              Exchanging commits has to be performed manually and explicitly (with the "git fetch", "git pull", and "git
+              push" commands).
+            </p>
+
+            <br>
+
+            <a href="https://chris.beams.io/posts/git-commit/" target="_blank">reference</a>
+
+            <br><br>
+
+            <h4>7 rules for a good commit message</h4>
+
+            <ul>
+              <li>
+                Use imperative statements in the subject line, e.g. "Fix broken Javadoc link"
+              </li>
+              <li>
+                Begin the subject line sentence with a capitalized verb, e.g. "Add, Prune,
+                Fix, Introduce, Avoid, etc"
+              </li>
+              <li>
+                Do not end the subject line with a period
+              </li>
+              <li>
+                Keep the subject line to 50 characters or less if possible
+              </li>
+              <li>
+                Wrap lines in the body at 72 characters or less
+              </li>
+              <li>
+                Mention associated jira issue(s) at the end of the commit comment, prefixed
+                with "Issue: " as above
+              </li>
+              <li>
+                In the body of the commit message, explain how things worked before this
+                commit, what has changed, and how things work now
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="band band-h" id="pull-request">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>About Pull Requests</h1>
+            <p>
+              About pull requests
+              Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once
+              a pull request is opened, you can discuss and review the potential changes with collaborators and add
+              follow-up commits before your changes are merged into the base branch.
+            </p>
+            <img src="images/git-merge.png" alt="">
+          </div>
+        </div>
+      </section>
+      <section class="band band-f" id="more-commands">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>Otras Ordenes que podrán necesitar</h1>
+            <p>Revertir el commit identificado por "hash_commit"</p>
+            <pre class=" language-es"><code class=" language-es">git revert “hash_commit"</code></pre>
+            <p>Verificar quién escribió cada linea de código</p>
+            <pre class=" language-es"><code class=" language-es">git blame "ruta al archivo"</code></pre>
+            <p>“congelar” el estado en el que se encuentra el proyecto en un momento determinado, con todos los cambios
+              que tenemos a "sin comitear", y lo guarda en una pila provisional brindando la posibilidad de poder
+              recuperarlo más adelante. </p>
+            <pre class=" language-es"><code class=" language-es">git stash</code></pre>
+            <p>Verificar que hay en stash</p>
+            <pre class=" language-es"><code class=" language-es">git stash show</code></pre>
+            <p>Volver a traer los cambios luego de hacer stash</p>
+            <pre class=" language-es"><code class=" language-es">git stash apply</code></pre>
+            <p>Ver historial de commits</p>
+            <pre class=" language-es"><code class=" language-es">git log</code></pre>
+            <p>Ver el árbol git</p>
+            <pre class=" language-es"><code class=" language-es">git log --graph --oneline --all</code></pre>
+          </div>
+        </div>
+      </section>
+      <section class="band band-g" id="questions">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>Preguntas no tan obvias</h1>
+            <ul>
+              <li>
+                ¿Quienes usan git?
+              </li>
+              <li>
+                ¿Es posible vivir sin git?
+              </li>
+              <li>
+                ¿Tengo que aprenderme esto de memoria? hint: nah
+              </li>
+              <li>
+                ¿Cuál es la diferencia entre git y github?
+              </li>
+              <li>
+                ¿Hay alternativas a github?
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="band band-h" id="spare-time">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>Si queda tiempo sería bueno:</h1>
+            <ul>
+              <li>
+                Que un estudiante haga un cambio en el repositorio de prueba
+              </li>
+              <li>
+                Configurar alias para comandos principales
+              </li>
+              <li>
+                Git Kraken
+              </li>
+              <li>
+                Configurar SSH en github
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="band band-h" id="handy-references">
+        <div class="band-container">
+          <div class="band-inner">
+            <h1>Algunas referencias utiles:</h1>
+            <ul>
+              <li>
+                <a href="https://www.git-tower.com/learn/git/commands" target="_blank">Git Commands</a>
+              </li>
+              <li>
+                <a href="https://chris.beams.io/posts/git-commit/" target="_blank">Como escribir un buen mensaje para
+                  tus commits</a>
+              </li>
+              <li>
+                <a href="https://help.github.com/es/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account"
+                  target="_blank">Agregar llave ssh a github</a>
+              </li>
+              <li>
+                <a href="https://www.gitkraken.com/" target="_blank">Git Kraken</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
